@@ -21,3 +21,7 @@ When a new expense is added, it shows up and the chart updates.
 * Adding CSS
 * Styling React Components
 * Composition: Children props
+* Listening to Events & Event Handlers
+
+---
+---
