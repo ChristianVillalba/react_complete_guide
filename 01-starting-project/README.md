@@ -6,7 +6,7 @@ Instructor: Maximilian Schwarzmüller
 
 ## Description
 
-This project It's an expense tracker created using React.
+This project is an expense tracker created using React.
 
 We can see our expenses, showing the concept, the date and the amount.        
 The expenes can be filtered by year.        
@@ -22,6 +22,8 @@ When a new expense is added, it shows up and the chart updates.
 * Styling React Components
 * Composition: Children props
 * Listening to Events & Event Handlers
+* State
+* Hook: useState
 
 ---
 ---
