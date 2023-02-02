@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+// we can call useState only once. the be used on multiple elements, they must be stored in variables
 
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
+
+  // Adds state so the values can be changed/
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
   // event: we can console.log event to see in the console the target and the value assigned
   // so we can hold the value on the specified target when some event occurs: event.target.value
+  // value of the input element will always return an string , even if the value is a number or a date
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
