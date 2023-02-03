@@ -24,6 +24,9 @@ When a new expense is added, it shows up and the chart updates.
 * Listening to Events & Event Handlers
 * State
 * Hook: useState
+  * Working with multiple states
+  * One single state affecting multiple components
+
 
 ---
 ---
