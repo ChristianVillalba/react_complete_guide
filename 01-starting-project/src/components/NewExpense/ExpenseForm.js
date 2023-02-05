@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-// we can call useState only once. the be used on multiple elements, they must be stored in variables
+// we can call useState only once. to be used on multiple elements, they must be stored in variables
 
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
 
   // Adds state so the values can be changed/
+
+  // Multiple States : we need to store each state in a variable 
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
+
+  // One single state: check lesson 44
 
   // event: we can console.log event to see in the console the target and the value assigned
   // so we can hold the value on the specified target when some event occurs: event.target.value
@@ -28,6 +32,7 @@ const ExpenseForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    // prevent the page to be reloaded after submitting
 
     const expenseData = {
       title: enteredTitle,
@@ -35,7 +40,7 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
 
-    props.onSaveExpenseData(expenseData);
+    console.log(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
