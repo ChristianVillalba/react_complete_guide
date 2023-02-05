@@ -30,6 +30,8 @@ When a new expense is added, it shows up and the chart updates.
   * States that depends on other states
 * Form Inputs
   * Using State with Form Inputs 
-
+  * Handling Form Submission
+* Two-way binding React
+* Child-to-Parent Component Communication (Bottom-up)
 ---
 ---
