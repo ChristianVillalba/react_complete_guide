@@ -20,13 +20,16 @@ When a new expense is added, it shows up and the chart updates.
 * Props
 * Adding CSS
 * Styling React Components
+* Adding JavaScript Logic to Components
 * Composition: Children props
 * Listening to Events & Event Handlers
 * State
 * Hook: useState
   * Working with multiple states
   * One single state affecting multiple components
-
+  * States that depends on other states
+* Form Inputs
+  * Using State with Form Inputs 
 
 ---
 ---
