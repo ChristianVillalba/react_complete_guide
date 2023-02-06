@@ -3,7 +3,7 @@ import React from "react";
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
   const SaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       // The object generated: ExpenseForm.js > submitHandler > expenseData
@@ -12,7 +12,7 @@ const NewExpense = () => {
       // We add a new key: the id key
       id: Math.random().toString(),
     };
-    console.log(expenseData);
+    props.onAddExpense(expenseData);
   };
 
   return (
