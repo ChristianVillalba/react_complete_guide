@@ -33,5 +33,12 @@ When a new expense is added, it shows up and the chart updates.
   * Handling Form Submission
 * Two-way binding React
 * Child-to-Parent Component Communication (Bottom-up)
+  * Props: to pass data from parent to child (components)
+  * Pointers: to pass data from child to parent       
+  eg: data generated in a form (child component)      
+  what need to be passed to a parent component
+* Passing data betweeen Components
+  * From parent to child or from child to parent      
+  * We can not skip intermediate components
 ---
 ---
