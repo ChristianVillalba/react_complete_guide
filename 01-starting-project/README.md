@@ -38,7 +38,11 @@ When a new expense is added, it shows up and the chart updates.
   eg: data generated in a form (child component)      
   what need to be passed to a parent component
 * Passing data betweeen Components
-  * From parent to child or from child to parent      
+  * From parent to child (Pass state data via props)      
+  * From child to parent (Lifting the state up)        
   * We can not skip intermediate components
+ * Difference: Controlled & Uncotrolled Components
+ * Difference: Statefull & Stateless Components
+ 
 ---
 ---
