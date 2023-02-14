@@ -41,8 +41,11 @@ When a new expense is added, it shows up and the chart updates.
   * From parent to child (Pass state data via props)      
   * From child to parent (Lifting the state up)        
   * We can not skip intermediate components
- * Difference: Controlled & Uncotrolled Components
- * Difference: Statefull & Stateless Components
- 
+* Difference: Controlled & Uncotrolled Components
+* Difference: Stateful & Stateless Components
+* Rendering a List of Data
+  * Using Stateful List
+  * "Keys"
+
 ---
 ---
