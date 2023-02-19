@@ -51,6 +51,9 @@ When a new expense is added, it shows up and the chart updates.
   * You need to set a **unique value per item**
   * Index as key: (discouraged to use) it isn't directly attached to the content of the item
   * Databases use unique id's 
+* Conditional Renderig
+* Dynamic Styles
+  
 
 ---
 ---
