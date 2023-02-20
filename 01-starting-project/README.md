@@ -45,7 +45,15 @@ When a new expense is added, it shows up and the chart updates.
 * Difference: Stateful & Stateless Components
 * Rendering a List of Data
   * Using Stateful List
-  * "Keys"
+* Key Value
+  * Useful when rendering a List of data
+  * It helps React to identify the individual items
+  * You need to set a **unique value per item**
+  * Index as key: (discouraged to use) it isn't directly attached to the content of the item
+  * Databases use unique id's 
+* Conditional Renderig
+* Dynamic Styles
+  
 
 ---
 ---
