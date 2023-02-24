@@ -54,6 +54,23 @@ When a new expense is added, it shows up and the chart updates.
 * Conditional Renderig
 * Dynamic Styles
   
+---
+
+## Notes
+
+* React
+  * Building complex, interactive and reactive user interfaces. 
+  * Declarative Programming:
+    * Define the desired target (state) and React will figure out the JS DOM instructions 
+    * We are declaring how User Interface should look under differnt conditions dependent upon the state 
+* React Components
+  * Split chunks of code into multiple smaller functions
+  * Reusability
+    * Don't repeat yourself    
+  * Separation of Concerns
+    * Don't do too many things in the same place (function)
+  
+
 
 ---
 ---
