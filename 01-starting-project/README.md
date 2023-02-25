@@ -64,12 +64,17 @@ When a new expense is added, it shows up and the chart updates.
     * Define the desired target (state) and React will figure out the JS DOM instructions 
     * We are declaring how User Interface should look under differnt conditions dependent upon the state 
 * React Components
+  * Combinations of HTML, CSS & JS
   * Split chunks of code into multiple smaller functions
   * Reusability
     * Don't repeat yourself    
   * Separation of Concerns
     * Don't do too many things in the same place (function)
-  
+* Expressions in JSX: Outputting Dynamic Data
+  * Dynamic Data: 
+    * Not hard coded  
+    * Received (eg: user-form or database) and then output it dynamically 
+    * {} Allows to run JS Expressions 
 
 
 ---
