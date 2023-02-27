@@ -81,14 +81,23 @@ When a new expense is added, it shows up and the chart updates.
       * A value Object will crash our app
         * eg: Date Object can't be rendered as text ( JS String >> HTML)
         * It must be converted to string first using the method: `toISOString()`
-        * eg: `const expenseDate = new Date(2023, 2, 25);` `<h2>{myNewDate.toISOString()}</h2>`
+        * eg: 
+        ```javascript 
+        const expenseDate = new Date(2023, 2, 25); 
+        ...
+        <h2>{myNewDate.toISOString()}</h2>
+        ```
 * Props (Properties)
   * HTML Elements have attributes, React Components can have "custom attributes": **props**
   * Props make our components reusable  
     * Components can't just use data stored in other components
     * We can pass data between components by adding an attribute: **props**
-      
-    
+  * We can use Curly Braces `{}` to pass values to attributes-props
+  * Passing **props** as parameter in our **Component**
+    * One parameter will be an object which holds all the received attributes as properties
+    * Objects: key-value pairs `title: beer`
+    * Key: the attribute name
+    * Values the values of those attributes
 
 
 ---
