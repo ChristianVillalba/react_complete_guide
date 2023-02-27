@@ -74,7 +74,21 @@ When a new expense is added, it shows up and the chart updates.
   * Dynamic Data: 
     * Not hard coded  
     * Received (eg: user-form or database) and then output it dynamically 
-    * {} Allows to run JS Expressions 
+  * { } Curly Braces
+    * Allows to run JS Expressions
+    * The expression inside can point to a variable or const
+      * The expression will retrieve the value from that variable/constant
+      * A value Object will crash our app
+        * eg: Date Object can't be rendered as text ( JS String >> HTML)
+        * It must be converted to string first using the method: `toISOString()`
+        * eg: `const expenseDate = new Date(2023, 2, 25);` `<h2>{myNewDate.toISOString()}</h2>`
+* Props (Properties)
+  * HTML Elements have attributes, React Components can have "custom attributes": **props**
+  * Props make our components reusable  
+    * Components can't just use data stored in other components
+    * We can pass data between components by adding an attribute: **props**
+      
+    
 
 
 ---
