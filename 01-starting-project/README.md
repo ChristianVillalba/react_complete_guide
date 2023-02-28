@@ -83,7 +83,7 @@ When a new expense is added, it shows up and the chart updates.
         * It must be converted to string first using the method: `toISOString()`
         * eg: 
         ```javascript 
-        const expenseDate = new Date(2023, 2, 25); 
+        const myNewDate = new Date(2023, 2, 25); 
         ...
         <h2>{myNewDate.toISOString()}</h2>
         ```
@@ -98,7 +98,34 @@ When a new expense is added, it shows up and the chart updates.
     * Objects: key-value pairs `title: beer`
     * Key: the attribute name
     * Values the values of those attributes
-
-
+* Adding JavaScript Logic to Components
+  * Example: Formatting a Date 
+  * [The toLocaleString() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+  * [Everything You Need to Know About Date in JavaScript](https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/) > Formatting a date
+  ```javascript 
+        // Creating the variables:
+        const day = props.date.toLocaleString("en-GB", { month: "2-digit" });
+        const month = props.date.toLocaleString("en-GB", { month: "long" });
+        const year = props.date.getFullYear();
+        ...
+        // Injecting the values
+        <div>{day}</div>
+        <div>{month}</div>
+        <div>{year}</div>
+        ```
+* Splitting Components
+  * There is no hard rule when to build a new component
+  * Every component should focused on one core task
+  * We must keep every component on its own relatively small and manageable
+* Composition
+  * The approach of building an user interface from smaller building blocks
+  * Some components are configured through props
+  * We can also pass content between the opening and closing tags of that component
+  * In order to avoid repetition, we can extract the common values. eg: styles 
+  
+  
+  
+  
+  
 ---
 ---
