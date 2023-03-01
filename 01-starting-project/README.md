@@ -119,12 +119,49 @@ When a new expense is added, it shows up and the chart updates.
   * We must keep every component on its own relatively small and manageable
 * Composition
   * The approach of building an user interface from smaller building blocks
-  * Some components are configured through props
-  * We can also pass content between the opening and closing tags of that component
   * In order to avoid repetition, we can extract the common values. eg: styles 
+  * Some components are configured through props
+  * We can also pass content between the opening and closing tags of our components:
+  * `<div>{props.children}</div>`
+    * **children** is a reserved name
+    * It will always be the content between the opening and closing tags of your custom component.
+    * All the default HTML components supports className for adding CSS classes
+    * Custom Components only support what you tell them to support.
+    
+     ```javascript
+    function Card(props) {
+        const classes = "card" + props.className;
+        return (
+          <div className={classes}>
+              {props.children}
+          </div>
+        );
+    }
+    export default Card;```
   
-  
-  
+  * Complex Wrapper Components which might have a more complex JSX structure
+  * Being able to extract components allows:  
+     * Save a lot of code duplication 
+     * Keep our other components clean
+* Closer look at JSX
+  * Developer Tools > JavaScript code
+  * Looks different to what we wrote (JSX code isn't supported by the browser)
+  * In package.json, we've got dependencies, two are related to React:
+     * React and React-dom
+     * React-dom is imported in the index.js file
+     * Modern React project don't need React imports
+     * React is still being used when use JSX code
+* Organizing Components Files 
+  * Big projects: Organize components into sub folders
+  * Remember to update the imports
+  * It's up to you how to organize them.
+  * You and any team members Should be comfortable working with these files.
+* Alternative Function Syntax:
+  * Two ways to create Components:
+  * `function MyComponent(props){}`
+  * `const myComponent = (props) => {}`
+  * It's 100% optional. It doesn't offer any benefits
+  * [Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
   
   
 ---
