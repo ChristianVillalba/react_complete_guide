@@ -165,6 +165,7 @@ When a new expense is added, it shows up and the chart updates.
 * Events Listeners and Event Handlers
   * Some **events** are only available on specific elements 
   (based on default DOM behavior)
+  * React exposes the default events as props which start with on
   * [HTML Event Attributes](https://www.w3schools.com/tags/ref_eventattributes.asp)
   * React needs CamelCased Event Attributes eg: onclick > onClick
   
