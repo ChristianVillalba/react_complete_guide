@@ -162,7 +162,11 @@ When a new expense is added, it shows up and the chart updates.
   * `const myComponent = (props) => {}`
   * It's 100% optional. It doesn't offer any benefits
   * [Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-  
+* Events Listeners and Event Handlers
+  * Some **events** are only available on specific elements 
+  (based on default DOM behavior)
+  * [HTML Event Attributes](https://www.w3schools.com/tags/ref_eventattributes.asp)
+  * React needs CamelCased Event Attributes eg: onclick > onClick
   
 ---
 ---
