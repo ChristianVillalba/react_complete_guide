@@ -162,9 +162,20 @@ When a new expense is added, it shows up and the chart updates.
   * `const myComponent = (props) => {}`
   * It's 100% optional. It doesn't offer any benefits
   * [Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-
-
-
+* Events Listeners and Event Handlers
+  * Some **events** are only available on specific elements 
+  (based on default DOM behavior)
+  * React exposes the default events as props which start with on
+  * [HTML Event Attributes](https://www.w3schools.com/tags/ref_eventattributes.asp)
+  * React needs CamelCased Event Attributes eg: onclick > onClick
+* State
+  * State is actually not a React specific concept but it is a key concept in React  
+  * By default, if a variable changes, React ignores it.
+  * We add state to data that should result in any component being re-evaluated
+  * To add **state** we use useState, it is a so-called **React hook**
+* React hooks
+  * They start with the word "use" in their name
+  * All these **hooks** must only be called inside of **React component functions**
 
 ---
 ---
