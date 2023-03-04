@@ -162,7 +162,9 @@ When a new expense is added, it shows up and the chart updates.
   * `const myComponent = (props) => {}`
   * It's 100% optional. It doesn't offer any benefits
   * [Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-  
-  
+
+
+
+
 ---
 ---
