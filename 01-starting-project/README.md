@@ -172,10 +172,17 @@ When a new expense is added, it shows up and the chart updates.
   * State is actually not a React specific concept but it is a key concept in React  
   * By default, if a variable changes, React ignores it.
   * We add state to data that should result in any component being re-evaluated
+      * State is separated on a per component instance basis
   * To add **state** we use useState, it is a so-called **React hook**
 * React hooks
   * They start with the word "use" in their name
   * All these **hooks** must only be called inside of **React component functions**
+* useState
+  * Returns an array: 
+  * The first value is the variable itself 
+  * The second element is the updating function.
+  * we can use **array destructuring** to store both elements in separate variables
+  * `const [myVariable, updateVariable] = useState("InitialValue - Optional")`
 
 ---
 ---
