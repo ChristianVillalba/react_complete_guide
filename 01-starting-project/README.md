@@ -183,6 +183,71 @@ When a new expense is added, it shows up and the chart updates.
   * The second element is the updating function.
   * we can use **array destructuring** to store both elements in separate variables
   * `const [myVariable, updateVariable] = useState("InitialValue - Optional")`
-
+* Form Inputs
+  * Event Listener: **onChange**
+    * It can be used for **all the inputs** 
+  * **Event**: `console.log(event)`
+    * We can see in the console the **target** & **the value**
+  * **Target** fiel: Input + onChange + `console.log(event)` 
+    * It points at the DOM Element for which the event occurred
+    * The element will have many properties, one of them will be **value**
+  * **Value** property
+    * holds the current value of the input
+    * It will always return an string , even if the value is a number or date
+  * `event.target.value`
+    * We can hold the **the value** of the specified **target** when some **event** occurs
+* Working with Multiple States
+  * We can call `useState("")` **only once**
+  * To be used on multiple elements, they must be stored in variables
+  * Multiple Sates Stored in Multiple Variables
+    * ```javascript
+      const[firstVariable, firstFunction] = useState("FirstInitialValue");
+      const[secondVariable, secondFunction] = useState("SecondInitalValue");
+      const[thirdVariable, thirdFunction] = useState("thirdInitalValue");
+      
+      const firstChangeHandler = (event) => {
+        setFirstVariable(event.target.value)
+      };
+      const secondChangeHandler = (event) => {
+        setSecondVariable(event.target.value)
+      };
+      const thirdChangeHandler = (event) => {
+        setThirdVariable(event.target.value)
+      };
+      ```
+  * One state storing Objects (an alterative)
+    * ```javascript
+      const [userInput, setUserInput] = useState({
+        firstVariable:"" , 
+        secondVariable:"" , 
+        thirdVariable:"" , 
+      });
+      
+      const firstVariableChangeHandler = (event) => {
+        setUserInput({
+        ...userInput,
+        enteredFirstInput: event.target.value,
+        })
+      };
+      const secondVariableChangeHandler = (event) => {
+        setUserInput({
+        ...userInput,
+        enteredSecondInput: event.target.value,
+        })
+      };
+      const firstVariableChangeHandler = (event) => {
+        setUserInput({
+        ...userInput,
+        enteredThirdInput: event.target.value,
+        })
+      };
+      ```
+  * Spread Operator `...` necessary to keep data of the rest of variables when changing a particular one
+    * It takes an object, pulls out all the key value pairs
+    * Then, it adds them to the new object
+    * And we can still override the targeted key value pair
+  * By doing it like this, we ensure that the other values aren't thrown away, but are always a part of that new state
+  
+  
 ---
 ---
