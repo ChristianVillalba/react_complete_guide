@@ -1,6 +1,6 @@
 # React: Expenses Tracker App
 
-Notes from:     
+A project from:     
 [React - The Complete Guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)  
 Instructor: Maximilian Schwarzmüller 
 
@@ -55,8 +55,13 @@ When a new expense is added, it shows up and the chart updates.
 * Dynamic Styles
   
 ---
+---
 
 ## Notes
+
+Notes from:     
+[React - The Complete Guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)  
+Instructor: Maximilian Schwarzmüller 
 
 * React
   * Building complex, interactive and reactive user interfaces. 
