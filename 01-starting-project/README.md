@@ -270,8 +270,9 @@ Instructor: Maximilian Schwarzmüller
     * Theoretically, if you schedule a lot of state updates at the same time, you could be depending on an outdated or incorrect state snapshot
     * `prevState` will guarantee that the state snapshot used will always be the latest state snapshot, keeping all scheduled state updates in mind
   * If your state update depends on the previous state, **use this function form**
-    
-    
+* Handling Form Submission    
+  * Default behaviour that we need to avoid: refresh page through submission
+  * `event.preventDefault()` on the function that will handle the submission
   
  
 
