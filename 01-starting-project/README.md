@@ -220,7 +220,7 @@ Instructor: Maximilian Schwarzmüller
         setThirdVariable(event.target.value)
       };
       ```
-  * One state storing Objects (an alterative)
+  * One State storing Objects (an alterative)
     * ```javascript
       const [userInput, setUserInput] = useState({
         firstVariable:"" , 
@@ -252,7 +252,28 @@ Instructor: Maximilian Schwarzmüller
     * Then, it adds them to the new object
     * And we can still override the targeted key value pair
   * By doing it like this, we ensure that the other values aren't thrown away, but are always a part of that new state
+* Updating State that depends on the Previous State:
+  * We should call the updating function and pass in a function to that function:
+  ```javascript
+    const firstVariableChangeHandler = (event) => {
+        setUserInput( (prevState) => {
+          return {...prevState, enteredFirstInput: event.target.value}
+        }
+      };
+  ```
+      
+  * We call the `setUserInput` function and we pass an (anonymous) arrow function to it
+  * That function will automatically be executed by React and it will receive the previous state `prevState`snapshot 
+  * And it will return the new state snapshop
+  * Reasons to use this method:
+    * Reacts schedules state updates (it doesn't perform them instantly)
+    * Theoretically, if you schedule a lot of state updates at the same time, you could be depending on an outdated or incorrect state snapshot
+    * `prevState` will guarantee that the state snapshot used will always be the latest state snapshot, keeping all scheduled state updates in mind
+  * If your state update depends on the previous state, **use this function form**
+    
+    
   
-  
+ 
+
 ---
 ---
