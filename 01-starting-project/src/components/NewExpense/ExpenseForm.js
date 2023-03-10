@@ -28,22 +28,31 @@ function ExpenseForm(props) {
     const expenseData = {
       myTitle: enteredTitle,
       myAmount: enteredAmount,
-      myDate: new Date(enteredDate)
+      myDate: new Date(enteredDate),
     };
     console.log(expenseData);
-  }
+    // After summiting the form, clean the form (restore the values to empty)
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate(""); 
+  };
 
   return (
-    <form onSubmit={submitHandler} >
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input onChange={titleChangeHandler} type="text" />
+          <input
+            onChange={titleChangeHandler}
+            value={enteredTitle}
+            type="text"
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
           <input
             onChange={amountChangeHandler}
+            value={enteredAmount}
             type="number"
             min="0.01"
             step="0.01"
@@ -53,6 +62,7 @@ function ExpenseForm(props) {
           <label>Date</label>
           <input
             onChange={dateChangeHandler}
+            value={enteredDate}
             type="date"
             min="2020-01-01"
             max="2023-12-31"

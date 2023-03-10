@@ -273,7 +273,21 @@ Instructor: Maximilian Schwarzmüller
 * Handling Form Submission    
   * Default behaviour that we need to avoid: refresh page through submission
   * `event.preventDefault()` on the function that will handle the submission
-  
+  * Cleaning Inputs after submission:
+    * Two way bindings: 
+      * We can pass a new value back into the input.
+      * In other words: we can **reset or change the input programmatically**.
+        [inputs don't just listen to changes]
+    * We add the **value** attribute
+      * This will set the internal value property
+      * We can set it to a new value
+
+
+
+
+So that 
+
+
  
 
 ---
