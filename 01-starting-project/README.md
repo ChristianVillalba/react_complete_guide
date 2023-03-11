@@ -38,9 +38,8 @@ When a new expense is added, it shows up and the chart updates.
   eg: data generated in a form (child component)      
   what need to be passed to a parent component
 * Passing data betweeen Components
-  * From parent to child (Pass state data via props)      
-  * From child to parent (Lifting the state up)        
-  * We can not skip intermediate components
+  * From parent to child  
+  * From child to parent      
 * Difference: Controlled & Uncotrolled Components
 * Difference: Stateful & Stateless Components
 * Rendering a List of Data
@@ -281,13 +280,28 @@ Instructor: Maximilian Schwarzmüller
     * We add the **value** attribute
       * This will set the internal value property
       * We can set it to a new value
-
-
-
-
-So that 
-
-
+      ```javascript
+        <input
+          onChange={titleChangeHandler}
+          value={enteredTitle}
+          type="text"
+        />
+      ```
+      * Now we don't just listen to changes in the input to update our state.
+      * We also feed the state back into the input
+      * So that when **we change the state**, **we also change input**.
+      * The advantage is that when the form is submitted, we can call setEnteredTitle.
+      * And set this back to an empty string (which also was our initial state).
+      ```javascript
+      // in the submitHandler function
+        setEnteredTitle("");
+        setEnteredAmount("");
+        setEnteredDate(""); 
+      ```
+* Passing data betweeen Components
+  * From parent to child (Pass state data via props)      
+  * From child to parent (Lifting the state up)        
+  * We can not skip intermediate components    
  
 
 ---
