@@ -7,31 +7,35 @@ function ExpenseForm(props) {
   const [enteredDate, setEnteredDate] = useState("");
 
   const titleChangeHandler = (event) => {
-    const myTitle = event.target.value;
-    setEnteredTitle(myTitle);
-    // or setEnteredTitle(event.target.value)
+    // const myTitle = event.target.value;
+    // setEnteredTitle(myTitle);
+    setEnteredTitle(event.target.value)
   };
   const amountChangeHandler = (event) => {
-    const myAmount = event.target.value;
-    setEnteredAmount(myAmount);
-    // or setEnteredAmount(event.target.value)
+    // const myAmount = event.target.value;
+    // setEnteredAmount(myAmount);
+    setEnteredAmount(event.target.value)
   };
   const dateChangeHandler = (event) => {
-    const myDate = event.target.value;
-    setEnteredDate(myDate);
-    // or setEnteredDate/(event.target.value)
+    // const myDate = event.target.value;
+    // setEnteredDate(myDate);
+    setEnteredDate(event.target.value)
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     // Expense Data Object that will be changed when the form is submitted
+
     const expenseData = {
-      myTitle: enteredTitle,
-      myAmount: enteredAmount,
-      myDate: new Date(enteredDate),
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
     };
-    console.log(expenseData);
-    // After summiting the form, clean the form (restore the values to empty)
+
+    // Allow to communicate with parent Component (New Expense)
+    props.onSaveExpenseData(expenseData);
+
+    // After submmiting the form, clean the form (restore the values to empty)
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate(""); 
