@@ -299,9 +299,86 @@ Instructor: Maximilian Schwarzmüller
         setEnteredDate(""); 
       ```
 * Passing data betweeen Components
-  * From parent to child (Pass state data via props)      
-  * From child to parent (Lifting the state up)        
-  * We can not skip intermediate components    
+  * From parent to child
+    * Pass data via props 
+    * Props only pass data from parent to child.      
+  * From child to parent 
+    * Pass the data via pointers        
+  * When passing data, We can not skip intermediate components
+  * Example: Passing Data from Child to Parent:
+    * We add a new prop to NewExpense: `onSaveExpenseData`
+    ```javascript
+    // NewExpense.js
+    function NewExpense(props) {
+      return <div className="new-expense">
+        <ExpenseForm onSaveExpenseData /> 
+        // onMyAction: (name convention) **value for this prop** is a **functions** that will triggered when something happens
+      </div>;}
+      ```
+    * Now we need to define `onSaveExpenseData` function in this component using as a parameter the data entered using the form (ExpenseForm):
+    ```javascript
+     function NewExpense(props) {
+       const onSaveExpenseData = (enteredDataExpense) => { // This function will need a parameter
+         const expenseData = { // The object that we genereate using the submitHandler in ExpenseForm.js 
+           ...enteredDataExpense,  // We extract the key: value pairs of that object adding them to our new obj (the funct param)
+           id: Math.random().toString(); //We add a new id to the new created obj (we need to convert that to str)
+         };
+         console.log(expenseData); //Stil no database so lets use the console
+       };
+       return <div className="new-expense">
+         <ExpenseForm onSaveExpenseData/>
+       </div>;
+      ```
+     * We can add a pointer in `onSaveExpenseData` to `onSaveExpenseData`
+     ```javascript
+     <ExpenseForm onSaveExpenseData={onSaveExpenseData} />
+      ```
+     * Now, the ExpenseForm Component, has a prop, onSaveExpenseData that receives onSaveExpenseData as a value
+       * onSaveExpenseData is not executed there, it just points to the function that is passed to ExpenseForm (ExpenseForm.js)
+       * We can use this function in our Custom component. We have to call the pass and function manually
+     ```javascript
+    // ExpenseFomr.js
+    function ExpenseForm(props) {...  // ExpenseForm Component is receiving props from NewExpense
+      const submitHandler = (event) => {
+         ...
+         props.onSaveExpenseData(expanseData); // the submitHandler, access and executes this function defined in NewExpsense.js
+         // it passes expanseData as argument 
+         ...
+      ```
+     * This is how you can communicate between components and how you can communicate up:
+       * A child component, the ExpenseForm component here for example, 
+       * Can communicate up to the parent component, the NewExpense component in this case
+       * We can call a function in the new expense component and we can pass data as a parameter
+  * Now we can continue passing data up to other Parent Component (App.js)
+  ```javascript
+    // App.js
+    function App() { ...
+      const addExpenseHandler = (expense) => {
+        // logs to check if we receive the Data and where it is
+        console.log("In App.js");  
+        console.log(expenses);
+      }
+      return (
+        <div>
+          <h2>Expenses Tracker App</h2>
+          <NewExpense onAddExpense={addExpenseHandler}/> // onMyAction = function pointer passed as argument 
+          <Expenses items={expenses}/>
+        </div>
+      );
+      ```
+   * The pointer is on place, we can call the function in NewExpense.js
+   ```javascript
+     // NewExpense.js
+     function NewExpense(props) {...
+       const saveExpenseDataHandler = (enteredExpenseData) => {
+         ...
+         // We add here the function (as a value) that will be passed in App.js
+         props.onAddExpense(expenseData); // Send data upstairs (App.js)
+       }
+       ...
+      ```
+  
+    
  
 
 ---
