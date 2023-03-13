@@ -377,7 +377,21 @@ Instructor: Maximilian Schwarzmüller
        }
        ...
       ```
+* Lifting the State Up
+  * We may generate (or fetch) data in a component but We might need that data in a different component.     
+    Eg: data generated in a Form Component that must be added and displayed as an Expense Component (App Component in our case). 
+  * There is no direct connection between sibiling components
+  * We can olby communicate between parent-child (props) or child-parent (pointers)
+  * To connect sibilings we need to use the closest parent component to access to both sibilings components     
+    Eg: in our case, App.js have access to Expenses & NewExpenses Components 
+  * In our application , we are lifting the state up from NewExpenses (Folder) to App, so it can be passed via props to Expenses (Folder)
+    * The data is generated in ExpenseForm.js and passed to NewExpense.js so it can be lifted up to App
+    * From App, It will be passed by props to Expenses (Folder) so it can be added and displayed as an Expense Item
+  * The goal is to lift it up just as high as necessary 
   
+  
+
+
     
  
 
