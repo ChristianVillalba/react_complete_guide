@@ -388,7 +388,12 @@ Instructor: Maximilian Schwarzmüller
     * The data is generated in ExpenseForm.js and passed to NewExpense.js so it can be lifted up to App
     * From App, It will be passed by props to Expenses (Folder) so it can be added and displayed as an Expense Item
   * The goal is to lift it up just as high as necessary 
-  
+* Controlled Component
+  * a value which is used in the component is passed on to a parent component
+  * Both the currently set value, as well as the function which handles the selected value, might be not part of that component 
+  * eg: Expenses filter presents the DUI but the logic is on the parent compoent Expenses
+* Unontrolled Component
+  * We  
   
 
 
